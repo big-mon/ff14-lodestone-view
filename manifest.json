@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "FF14-Lodestone: Diary Custom Viewer",
+  "short_name": "LsDCV",
+  "version": "0.51",
+  "description": "Lodestone上の日記の見え方を変更します。",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.finalfantasyxiv.com/lodestone/character/*/blog/*"
+      ],
+      "css": [
+        "entry.css"
+      ],
+      "js": [
+        "imageEdit.js"
+      ]
+    }
+  ]
+}
