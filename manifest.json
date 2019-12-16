@@ -1,25 +1,23 @@
 {
   "manifest_version": 2,
-  "name": "FF14-Lodestone: Diary Custom Viewer",
-  "short_name": "LsDCV",
-  "version": "0.51",
-  "description": "Lodestone上の日記の見え方を変更します。",
+  "name": "FF14 The Lodestone Improve: Astrild",
+  "short_name": "Astrild",
+  "version": "0.52",
+  "description": "The Lodestone上の日記の見え方を変更します。",
   "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
   },
   "content_scripts": [
     {
       "matches": [
-        "https://*.finalfantasyxiv.com/lodestone/character/*/blog/*"
+        "https://*.finalfantasyxiv.com/lodestone/character/*/blog/*",
+        "https://*.finalfantasyxiv.com/lodestone/blog/*"
       ],
-      "css": [
-        "entry.css"
-      ],
-      "js": [
-        "imageEdit.js"
-      ]
+      "css": ["css/detail.css", "css/list.css"],
+      "js": ["lib/jquery.js", "js/ff14-detail.js", "js/ff14-list.js"]
     }
-  ]
+  ],
+  "permissions": ["storage"]
 }
