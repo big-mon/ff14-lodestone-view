@@ -1,8 +1,9 @@
 /* コンテンツラップ */
-.ldst__main, .ldst__side {
-  float: none!important;
-  width: auto!important;
-  margin: 1rem!important;
+.ldst__main,
+.ldst__side {
+  float: none !important;
+  width: auto !important;
+  margin: 1rem !important;
 }
 .ldst__side {
   column-width: 300px;
@@ -26,16 +27,16 @@
 }
 .custom_img a:hover img {
   transform: rotate(10deg) scale(1.6);
-  transition: .6s ease-in-out;
+  transition: 0.6s ease-in-out;
 }
 .custom_img img {
   width: 100%;
   height: auto;
   transform: rotate(0) scale(1);
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 .thumb_hover {
-  background: none!important;
+  background: none !important;
 }
 .ic_external {
   display: none;
@@ -43,24 +44,13 @@
 
 /* サイドバー簡素化 */
 .ldst__side__box {
-  padding: 0!important;
-}
-.character__side,
-.character__side__currency,
-.entry__ranking,
-.entry__ranking__thefeast,
-.entry__ranking__link,
-.entry__ranking__face,
-.heading--side--sm,
-.heading__icon,
-li.entry {
-  display: none!important;
+  padding: 0 !important;
 }
 
 /* コメント */
 #commentbox,
 #commentbox_in,
 #commentbox_trigger {
-  width: 100%!important;
+  width: 100% !important;
   max-width: 936px;
 }

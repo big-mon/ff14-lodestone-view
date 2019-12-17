@@ -1,8 +1,115 @@
+/* オリジナル要素
+------------------------------
+ */
 #list-bg {
   max-width: 960px;
   margin: 0 auto;
 }
 
+/* 全体デザイン
+------------------------------
+ */
+#breadcrumb {
+  margin-bottom: 2rem !important;
+}
 h1 {
   display: none;
+}
+.heading--lg h2,
+h2.heading--lg {
+  font-size: 3rem !important;
+  text-transform: uppercase;
+  font-family: Verdana;
+  line-height: 1;
+}
+
+.ldst__contents .heading--lg,
+.ldst__contents .ldst__window {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.ldst__contents .ldst__window {
+  margin-bottom: 2rem !important;
+}
+
+/* 注目の日記 - ヘッダ
+------------------------------
+ */
+.heading--pickup {
+  color: #662929 !important;
+  border-bottom: 1px solid #662929 !important;
+  margin-bottom: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+.heading--pickup p {
+  color: #662929 !important;
+}
+.entry__pickup__text {
+  display: none;
+}
+
+/* 注目の日記 - 記事カード
+------------------------------
+ */
+.entry__pickup .entry__blog_block,
+.entry__pickup .entry__blog_block__link {
+  background: transparent !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+  border-radius: 0 !important;
+}
+.entry__pickup .entry__blog_block {
+  border: 1px solid gray;
+}
+
+/* 最新の日記 - ヘッダ及び検索
+------------------------------
+ */
+h2.heading--lg {
+  color: #293c66 !important;
+  border-bottom: 1px solid #293c66 !important;
+  margin-bottom: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+.entry__blog_block__pager--change_list,
+.ldst__contents .heading__icon h3 {
+  display: none;
+}
+.heading__icon[data-key="blog_relation_search"] {
+  border-bottom: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.heading__icon i {
+  bottom: 2.5rem !important;
+}
+.entry__blog_block__pager--select--block {
+  display: none;
+}
+
+/* 最新の日記 - 記事カード(全体レイアウト)
+------------------------------
+ */
+.entry__block__wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.entry__block__wrapper .entry__blog_block,
+.entry__block__wrapper .entry__blog_block__link {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  box-sizing: border-box;
+}
+
+/* 最新の日記 - 記事カード(個別レイアウト)
+------------------------------
+ */
+.entry__block__wrapper .entry__blog_block {
+  flex-basis: 300px;
+  border: 1px solid gray;
+  display: flex;
+  flex-flow: column nowrap;
 }
