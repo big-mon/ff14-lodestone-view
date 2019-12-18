@@ -1,3 +1,8 @@
+:root {
+  --red: #662929;
+  --blue: #293c66;
+  --border: 1px solid gray;
+}
 /* オリジナル要素
 ------------------------------
  */
@@ -36,13 +41,13 @@ h2.heading--lg {
 ------------------------------
  */
 .heading--pickup {
-  color: #662929 !important;
-  border-bottom: 1px solid #662929 !important;
+  color: var(--red) !important;
+  border-bottom: 1px solid var(--red) !important;
   margin-bottom: 1rem !important;
   padding-bottom: 1rem !important;
 }
 .heading--pickup p {
-  color: #662929 !important;
+  color: var(--red) !important;
 }
 .entry__pickup__text {
   display: none;
@@ -59,15 +64,15 @@ h2.heading--lg {
   border-radius: 0 !important;
 }
 .entry__pickup .entry__blog_block {
-  border: 1px solid gray;
+  border: var(--border);
 }
 
 /* 最新の日記 - ヘッダ及び検索
 ------------------------------
  */
 h2.heading--lg {
-  color: #293c66 !important;
-  border-bottom: 1px solid #293c66 !important;
+  color: var(--blue) !important;
+  border-bottom: 1px solid var(--blue) !important;
   margin-bottom: 1rem !important;
   padding-bottom: 1rem !important;
 }
@@ -109,7 +114,7 @@ h2.heading--lg {
  */
 .entry__block__wrapper .entry__blog_block {
   flex-basis: 300px;
-  border: 1px solid gray;
+  border: var(--border);
   display: flex;
   flex-flow: column nowrap;
 }
