@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "FF14 The Lodestone Improve: Astrild",
   "short_name": "Astrild",
-  "version": "0.52",
+  "version": "1.0",
   "description": "The Lodestone上の日記の見え方を変更します。",
   "icons": {
     "16": "images/icon16.png",

@@ -99,6 +99,12 @@ h2.heading--lg {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  height: auto !important;
+}
+.entry__block__wrapper::after {
+  content: "";
+  display: block;
+  width: 320px;
 }
 .entry__block__wrapper .entry__blog_block,
 .entry__block__wrapper .entry__blog_block__link {
@@ -117,4 +123,51 @@ h2.heading--lg {
   border: var(--border);
   display: flex;
   flex-flow: column nowrap;
+}
+.entry__block__wrapper .entry__blog_block h5 {
+  padding: 1.5rem 1rem 3rem;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+.entry__block__wrapper .entry__blog_block a {
+  color: inherit !important;
+}
+
+.entry__block__wrapper .entry__blog_block .eyecatch {
+  position: relative;
+  color: white;
+}
+.entry__block__wrapper .entry__blog_block .eyecatch img {
+  object-fit: cover;
+  width: 100%;
+}
+.entry__block__wrapper .entry__blog_block .world {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.2rem 0.6rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: rgba(0, 0, 0, 0.6);
+}
+.entry__block__wrapper .entry__blog_block .info {
+  position: absolute;
+  left: 0;
+  bottom: 0.2rem;
+  display: flex;
+  width: 100%;
+  padding: 0 1rem;
+  opacity: 0.75;
+  box-sizing: border-box;
+}
+.entry__block__wrapper .entry__blog_block span {
+  padding: 0 0.2rem;
+}
+.entry__block__wrapper .entry__blog_block .time {
+  margin-right: auto;
+}
+.entry__block__wrapper .entry__blog_block:hover {
+  cursor: pointer;
+}
+.entry__block__wrapper .entry__blog_block:hover h5 {
+  text-decoration: underline;
 }
