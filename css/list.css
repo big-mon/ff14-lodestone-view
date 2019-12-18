@@ -80,6 +80,9 @@ h2.heading--lg {
 .ldst__contents .heading__icon h3 {
   display: none;
 }
+.entry__blog_block__pager--select--block {
+  width: 100% !important;
+}
 .heading__icon[data-key="blog_relation_search"] {
   border-bottom: none !important;
   margin: 0 !important;
@@ -87,9 +90,6 @@ h2.heading--lg {
 }
 .heading__icon i {
   bottom: 2.5rem !important;
-}
-.entry__blog_block__pager--select--block {
-  display: none;
 }
 
 /* 最新の日記 - 記事カード(全体レイアウト)
