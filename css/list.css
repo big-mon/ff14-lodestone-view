@@ -1,67 +1,59 @@
 :root {
-  --red: #662929;
-  --blue: #293c66;
-  --border: 1px solid gray;
-}
-/* オリジナル要素
-------------------------------
- */
-#list-bg {
-  max-width: 960px;
-  margin: 0 auto;
+  --red: #77202f;
+  --blue: #0f4c81;
+  --border: 1px solid #7e7d88;
+  --margin-bottom: 2rem;
+  --h-font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* 全体デザイン
 ------------------------------
  */
-#breadcrumb {
-  margin-bottom: 2rem !important;
+#breadcrumb,
+.ldst__contents .ldst__window {
+  margin-bottom: var(--margin-bottom) !important;
 }
-h1 {
-  display: none;
-}
-.heading--lg h2,
-h2.heading--lg {
+.ldst__single_column h2 {
   font-size: 3rem !important;
   text-transform: uppercase;
-  font-family: Verdana;
+  font-family: var(--h-font-family);
   line-height: 1;
 }
-
 .ldst__contents .heading--lg,
-.ldst__contents .ldst__window {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-.ldst__contents .ldst__window {
-  margin-bottom: 2rem !important;
-}
-
-/* 注目の日記 - ヘッダ
-------------------------------
- */
-.heading--pickup {
-  color: var(--red) !important;
-  border-bottom: 1px solid var(--red) !important;
-  margin-bottom: 1rem !important;
-  padding-bottom: 1rem !important;
-}
-.heading--pickup p {
-  color: var(--red) !important;
-}
-.entry__pickup__text {
-  display: none;
-}
-
-/* 注目の日記 - 記事カード
-------------------------------
- */
+.ldst__contents .ldst__window,
 .entry__pickup .entry__blog_block,
 .entry__pickup .entry__blog_block__link {
   background: transparent !important;
   box-shadow: none !important;
+}
+.ldst__contents img {
+  object-fit: cover;
+  width: 100%;
+}
+.ldst__contents div {
   box-sizing: border-box;
   border-radius: 0 !important;
+}
+
+/* 削除 */
+h1,
+.entry__pickup__text,
+.entry__blog_block__pager--change_list,
+.ldst__contents .heading__icon h3 {
+  display: none;
+}
+
+/* 注目の日記
+------------------------------
+ */
+.heading--pickup {
+  border-bottom: 1px solid var(--red) !important;
+  margin-bottom: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+.heading--pickup,
+.heading--pickup p {
+  color: var(--red) !important;
 }
 .entry__pickup .entry__blog_block {
   border: var(--border);
@@ -75,10 +67,6 @@ h2.heading--lg {
   border-bottom: 1px solid var(--blue) !important;
   margin-bottom: 1rem !important;
   padding-bottom: 1rem !important;
-}
-.entry__blog_block__pager--change_list,
-.ldst__contents .heading__icon h3 {
-  display: none;
 }
 .entry__blog_block__pager--select--block {
   width: 100% !important;
@@ -123,6 +111,7 @@ h2.heading--lg {
   border: var(--border);
   display: flex;
   flex-flow: column nowrap;
+  cursor: pointer;
 }
 .entry__block__wrapper .entry__blog_block h5 {
   padding: 1.5rem 1rem 3rem;
@@ -136,18 +125,15 @@ h2.heading--lg {
 .entry__block__wrapper .entry__blog_block .eyecatch {
   position: relative;
   color: white;
-}
-.entry__block__wrapper .entry__blog_block .eyecatch img {
-  object-fit: cover;
-  width: 100%;
+  overflow: hidden;
 }
 .entry__block__wrapper .entry__blog_block .world {
   position: absolute;
   top: 0;
   left: 0;
   padding: 0.2rem 0.6rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background: rgba(0, 0, 0, 0.6);
+  font-family: var(--h-font-family);
+  background: rgba(0, 0, 0, 0.4);
 }
 .entry__block__wrapper .entry__blog_block .info {
   position: absolute;
@@ -157,7 +143,6 @@ h2.heading--lg {
   width: 100%;
   padding: 0 1rem;
   opacity: 0.75;
-  box-sizing: border-box;
 }
 .entry__block__wrapper .entry__blog_block span {
   padding: 0 0.2rem;
@@ -165,9 +150,15 @@ h2.heading--lg {
 .entry__block__wrapper .entry__blog_block .time {
   margin-right: auto;
 }
-.entry__block__wrapper .entry__blog_block:hover {
-  cursor: pointer;
+
+/* 最新の日記 - 記事カード(エフェクト)
+------------------------------
+ */
+.entry__block__wrapper .entry__blog_block:hover .eyecatch img {
+  transform: rotate(10deg) scale(1.4);
+  transition: 0.6s ease-in-out;
 }
-.entry__block__wrapper .entry__blog_block:hover h5 {
-  text-decoration: underline;
+.entry__block__wrapper .entry__blog_block .eyecatch img {
+  transform: rotate(0) scale(1);
+  transition: 0.5s ease-in-out;
 }
