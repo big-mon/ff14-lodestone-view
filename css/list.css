@@ -26,7 +26,8 @@
   background: transparent !important;
   box-shadow: none !important;
 }
-.ldst__contents img {
+.ldst__single_column img,
+.ldst__main img {
   object-fit: cover;
   width: 100%;
 }
