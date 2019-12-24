@@ -53,4 +53,5 @@
 #commentbox_in,
 #commentbox_trigger {
   width: 100% !important;
+  max-width: 960px;
 }
