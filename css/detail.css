@@ -1,23 +1,31 @@
-/* コンテンツラップ */
+/* コンテンツ枠
+------------------------------
+ */
 .ldst__main,
 .ldst__side {
   float: none !important;
   width: auto !important;
-  margin: 1rem !important;
+}
+.ldst__main {
+  margin: 2rem 0 !important;
 }
 .ldst__side {
   column-width: 300px;
   column-gap: 15px;
+  margin: 3rem 0 2rem !important;
 }
 .ldst__side > div {
   display: inline-block;
   width: 100%;
 }
-.ldst__side .mb10 {
-  display: none;
+.ldst__side .mb10,
+.ic_external {
+  display: none !important;
 }
 
-/* 画像 */
+/* 記事内画像
+------------------------------
+ */
 .custom_img {
   display: table-cell;
   overflow: hidden;
@@ -30,19 +38,19 @@
 .thumb_hover {
   background: none !important;
 }
-.ic_external {
-  display: none;
-}
 
-/* サイドバー簡素化 */
+/* サイドバー
+------------------------------
+ */
 .ldst__side__box {
   padding: 0 !important;
 }
 
-/* コメント */
+/* コメント欄
+------------------------------
+ */
 #commentbox,
 #commentbox_in,
 #commentbox_trigger {
   width: 100% !important;
-  max-width: 936px;
 }

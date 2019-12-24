@@ -36,6 +36,7 @@ function hrefEdit(list) {
       .removeAttr("width")
       .removeAttr("height")
       .removeAttr("style")
-      .attr("src", href);
+      .attr("src", href)
+      .attr("loading", "lazy");
   });
 }
