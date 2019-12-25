@@ -27,8 +27,8 @@ function hrefEdit(list) {
 
     // 画像リンクを取得
     var href = $(item)
-      .find("a")
-      .attr("href");
+      .find("img")
+      .attr("data-origin_src");
 
     // 規定要素を変更
     $(item)
