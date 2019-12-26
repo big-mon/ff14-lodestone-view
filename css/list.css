@@ -56,8 +56,11 @@ h1,
 .heading--pickup p {
   color: var(--red) !important;
 }
-.entry__pickup .entry__blog_block {
-  border: var(--border);
+#custom-slider .entry__blog_block {
+  opacity: 1 !important;
+}
+#custom-slider .entry__blog_block__box {
+  height: 48px;
 }
 
 /* 最新の日記 - ヘッダ及び検索

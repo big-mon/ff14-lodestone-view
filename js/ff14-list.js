@@ -3,6 +3,7 @@ $(document).ready(function() {
   var url = location.href;
   if (url.indexOf("lodestone/blog") != -1) {
     custom_titleLabel();
+    custom_popular();
     custom_recent();
   }
 });
@@ -12,6 +13,31 @@ function custom_titleLabel() {
   // h2内容の変更
   $(".heading--pickup h2").text("Popular");
   $("h2.heading--lg").text("Recent");
+}
+
+// 注目の日記部分を更新
+function custom_popular() {
+  // 記事一覧を収集
+  var array = [];
+  $(".entry__pickup .entry__blog_block")
+    .each(function(index, item) {
+      array.push(item);
+      if (index >= 19) return false;
+    })
+    .parents(".entry__pickup")
+    .remove();
+
+  // 新規スライダーを作成
+  $(".heading--pickup").after(
+    '<div id="custom-slider" class="owl-carousel owl-theme"></div>'
+  );
+  $("#custom-slider").append(array);
+
+  // スライダーを稼働
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    items: 4
+  });
 }
 
 // 最新の日記部分の改変
