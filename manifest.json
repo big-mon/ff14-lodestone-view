@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "FF14 The Lodestone Improve: Astrild",
   "short_name": "Astrild",
-  "version": "1.09",
+  "version": "1.10",
   "description": "__MSG_appDesc__",
   "default_locale": "ja",
   "icons": {
@@ -13,8 +13,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*.finalfantasyxiv.com/lodestone/character/*/blog/*",
-        "https://*.finalfantasyxiv.com/lodestone/blog/*"
+        "https://*.finalfantasyxiv.com/lodestone/character/*/blog*",
+        "https://*.finalfantasyxiv.com/lodestone/blog*"
       ],
       "css": [
         "lib/owl.carousel.min.css",

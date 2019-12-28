@@ -23,6 +23,24 @@
   display: none !important;
 }
 
+/* 記事内
+------------------------------
+ */
+.ldst__main .blog__area,
+.ldst__main .blog__area--simple {
+  font-size: 14px;
+  text-align: justify;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, Meiryo,
+    "M+ 1p", sans-serif;
+  font-feature-settings: "palt";
+  letter-spacing: 0.08rem;
+  line-height: 1.8;
+}
+.ldst__main .txt_selfintroduction {
+  font-size: inherit;
+}
+
 /* 記事内画像
 ------------------------------
  */
