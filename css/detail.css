@@ -73,3 +73,17 @@
   width: 100% !important;
   max-width: 960px;
 }
+
+/* ブロックボタン
+------------------------------
+ */
+#custom_blocklist {
+  margin-bottom: var(--margin-bottom);
+  padding: 0 1rem;
+}
+#custom_blocklist span {
+  cursor: pointer;
+}
+#custom_blocklist span:hover {
+  text-decoration: underline;
+}

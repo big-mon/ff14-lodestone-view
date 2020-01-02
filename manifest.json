@@ -27,9 +27,15 @@
         "lib/owl.carousel.min.js",
         "js/functionOrder.js",
         "js/ff14-detail.js",
-        "js/ff14-list.js"
+        "js/ff14-list.js",
+        "js/ff14-blocklist.js"
       ]
     }
   ],
+  "browser_action": {
+    "default_icon": "images/icon48.png",
+    "default_title": "",
+    "default_popup": "popup/popup.html"
+  },
   "permissions": ["storage"]
 }
