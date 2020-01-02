@@ -2,7 +2,6 @@
 var DETAIL_FUNCTION = {
   // 画像タグを調整
   imgConvert: function() {
-    console.log("test1");
     // 画像要素のリストを加工(リッチ版)
     DETAIL_FUNCTION.hrefConvert($(".blog__area .img_box"));
 
@@ -15,7 +14,6 @@ var DETAIL_FUNCTION = {
 
   // hrefを入れ替える関数
   hrefConvert: function(list) {
-    console.log("kidoutyu-");
     $(list).each(function(index, item) {
       // 規定タグを変更
       $(item)
