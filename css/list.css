@@ -1,7 +1,8 @@
 :root {
   --red: #77202f;
   --blue: #0f4c81;
-  --border: 1px solid #7e7d88;
+  --gray: #7e7d88;
+  --border: 1px solid var(--gray);
   --margin-bottom: 2rem;
   --h-font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
