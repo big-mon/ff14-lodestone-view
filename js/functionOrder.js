@@ -8,13 +8,16 @@ $(document).ready(function() {
 
     // ブロックリストを取得
     chrome.storage.sync.get(["blocklist"], function(result) {
-      BLOCK_FUNCTION.blockUserList = result.blocklist;
+      // 未定義の場合はからの配列を代入
+      BLOCK_FUNCTION.blockUserList =
+        result.blocklist != null ? result.blocklist : [];
 
       // ブロックボタンの追加判定
       BLOCK_FUNCTION.chara_id = url.match(/^.+character\/([0-9]+)\//)[1];
       BLOCK_FUNCTION.insertButton();
     });
-  } // 一覧ページの場合
+  }
+  // 一覧ページの場合
   else if (url.indexOf("lodestone/blog") != -1) {
     LIST_FUNCTION.editTitle();
     LIST_FUNCTION.editPopular();

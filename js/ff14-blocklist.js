@@ -21,7 +21,7 @@ var BLOCK_FUNCTION = {
     // ブロック済みかを判定
     var isAlreadyBlocked = false;
     $(BLOCK_FUNCTION.blockUserList).each(function(index, item) {
-      if (item.id === chara_id) isAlreadyBlocked = true;
+      if (item.id === BLOCK_FUNCTION.chara_id) isAlreadyBlocked = true;
     });
 
     // キャラクター情報取得成功かつ未ブロックの場合、ボタンを表示
