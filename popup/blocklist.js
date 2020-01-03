@@ -61,7 +61,7 @@ function refreshList() {
       item.world +
       '"><td><a href="https://jp.finalfantasyxiv.com/lodestone/character/' +
       item.id +
-      '/" target="_blank">' +
+      '/" target="_blank" rel="noopener">' +
       item.name +
       "</a></td><td>" +
       item.world +
