@@ -1,33 +1,33 @@
 /* コンテンツ枠
 ------------------------------
  */
-.ldst__main,
-.ldst__side {
+.active-run .ldst__main,
+.active-run .ldst__side {
   float: none !important;
   width: auto !important;
 }
-.ldst__main {
+.active-run .ldst__main {
   margin: 2rem 0 !important;
 }
-.ldst__side {
+.active-run .ldst__side {
   column-width: 300px;
   column-gap: 15px;
   margin: 3rem 0 2rem !important;
 }
-.ldst__side > div {
+.active-run .ldst__side > div {
   display: inline-block;
   width: 100%;
 }
-.ldst__side .mb10,
-.ic_external {
+.active-run .ldst__side .mb10,
+.active-run .ic_external {
   display: none !important;
 }
 
 /* 記事内
 ------------------------------
  */
-.ldst__main .blog__area,
-.ldst__main .blog__area--simple {
+.active-run .ldst__main .blog__area,
+.active-run .ldst__main .blog__area--simple {
   font-size: 14px;
   text-align: justify;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
@@ -37,39 +37,39 @@
   letter-spacing: 0.08rem;
   line-height: 1.8;
 }
-.ldst__main .txt_selfintroduction {
+.active-run .ldst__main .txt_selfintroduction {
   font-size: inherit;
 }
 
 /* 記事内画像
 ------------------------------
  */
-.custom_img {
+.active-run .custom_img {
   display: table-cell;
   overflow: hidden;
 }
-.custom_img img {
+.active-run .custom_img img {
   margin: 2rem auto !important;
   width: 100%;
   height: auto;
 }
-.thumb_hover {
+.active-run .thumb_hover {
   background: none !important;
 }
 
 /* サイドバー
 ------------------------------
  */
-.ldst__side__box {
+.active-run .ldst__side__box {
   padding: 0 !important;
 }
 
 /* コメント欄
 ------------------------------
  */
-#commentbox,
-#commentbox_in,
-#commentbox_trigger {
+.active-run #commentbox,
+.active-run #commentbox_in,
+.active-run #commentbox_trigger {
   width: 100% !important;
   max-width: 960px;
 }
@@ -77,13 +77,13 @@
 /* ブロックボタン
 ------------------------------
  */
-#custom_blocklist {
+.active-run #custom_blocklist {
   margin-bottom: var(--margin-bottom);
   padding: 0 1rem;
 }
-#custom_blocklist span {
+.active-run #custom_blocklist span {
   cursor: pointer;
 }
-#custom_blocklist span:hover {
+.active-run #custom_blocklist span:hover {
   text-decoration: underline;
 }

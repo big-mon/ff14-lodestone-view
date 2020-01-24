@@ -1,35 +1,47 @@
 // ページ読み込み後の実行処理を制御
 $(document).ready(function() {
-  var url = location.href;
+  // 機能有効化設定を取得
+  chrome.storage.sync.get(["activeList"], function(result) {
+    var activeList =
+      result.activeList != null
+        ? result.activeList
+        : { list: true, detail: true };
+    console.log(activeList);
 
-  // 個別ページの場合
-  if (url.indexOf("lodestone/character") != -1) {
-    DETAIL_FUNCTION.imgConvert();
+    var url = location.href;
 
-    // ブロックリストを取得
-    chrome.storage.sync.get(["blocklist"], function(result) {
-      // 未定義の場合はからの配列を代入
-      BLOCK_FUNCTION.blockUserList =
-        result.blocklist != null ? result.blocklist : [];
+    // 個別ページの場合
+    if (activeList.detail && url.indexOf("lodestone/character") != -1) {
+      $(".ldst__bg").addClass("active-run");
 
-      // ブロックボタンの追加判定
-      BLOCK_FUNCTION.chara_id = url.match(/^.+character\/([0-9]+)\//)[1];
-      BLOCK_FUNCTION.insertButton();
-    });
-  }
-  // 一覧ページの場合
-  else if (url.indexOf("lodestone/blog") != -1) {
-    LIST_FUNCTION.editTitle();
-    LIST_FUNCTION.editPopular();
-    LIST_FUNCTION.editRecent();
+      DETAIL_FUNCTION.imgConvert();
 
-    // ブロックリストを取得
-    chrome.storage.sync.get(["blocklist"], function(result) {
-      BLOCK_FUNCTION.blockUserList = result.blocklist;
+      // ブロックリストを取得
+      chrome.storage.sync.get(["blocklist"], function(result) {
+        // 未定義の場合はからの配列を代入
+        BLOCK_FUNCTION.blockUserList =
+          result.blocklist != null ? result.blocklist : [];
 
-      BLOCK_FUNCTION.hiddenBlock();
-    });
-  }
+        // ブロックボタンの追加判定
+        BLOCK_FUNCTION.chara_id = url.match(/^.+character\/([0-9]+)\//)[1];
+        BLOCK_FUNCTION.insertButton();
+      });
+    }
+    // 一覧ページの場合
+    else if (activeList.list && url.indexOf("lodestone/blog") != -1) {
+      $(".ldst__bg").addClass("active-run");
+
+      LIST_FUNCTION.editTitle();
+      LIST_FUNCTION.editPopular();
+      LIST_FUNCTION.editRecent();
+
+      // ブロックリストを取得
+      chrome.storage.sync.get(["blocklist"], function(result) {
+        BLOCK_FUNCTION.blockUserList = result.blocklist;
+        BLOCK_FUNCTION.hiddenBlock();
+      });
+    }
+  });
 });
 
 // ブロック追加ボタン押下

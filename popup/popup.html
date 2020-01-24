@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="../lib/jquery.js"></script>
+    <script src="use.js"></script>
     <script src="blocklist.js"></script>
   </head>
   <body>
@@ -16,6 +17,23 @@
       <h2>Settings</h2>
 
       <ul>
+        <li class="setting-primary">
+          📜 Page Customize
+          <ul id="activate-list">
+            <li>
+              <label class="label--checkbox">
+                <input type="checkbox" id="use-list" class="checkbox" />
+                List Page (一覧画面)
+              </label>
+            </li>
+            <li>
+              <label class="label--checkbox">
+                <input type="checkbox" id="use-detail" class="checkbox" />
+                Detail Page (詳細画面)
+              </label>
+            </li>
+          </ul>
+        </li>
         <li class="setting-primary">
           ⛔ Block List
           <div id="blocklist-box">

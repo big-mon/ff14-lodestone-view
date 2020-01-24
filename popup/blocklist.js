@@ -84,6 +84,7 @@ var BLOCK_FUNCTION = {
 // ページ読み込み完了時に実行
 window.onload = function() {
   BLOCK_FUNCTION.getList();
+  USE_FUNCTION.getChecked();
 };
 
 // 解除ボタン押下
@@ -100,6 +101,9 @@ $(document).on("click", "#save", function() {
 
   // ブロックリストを更新
   BLOCK_FUNCTION.updateList(BLOCK_FUNCTION.list);
+
+  // 機能有効化対象を更新
+  USE_FUNCTION.updateActivate();
 });
 
 // キャンセルボタン押下
