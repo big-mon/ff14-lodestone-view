@@ -1,109 +1,87 @@
-/* コンテンツ枠
-------------------------------
- */
-
-.ldst__main,
-.ldst__side {
-  float: none !important;
-  width: auto !important;
-}
-
-.ldst__main {
-  margin: 2rem 0 !important;
-}
-
-.ldst__side {
-  column-width: 300px;
-  column-gap: 15px;
-  margin: 3rem 0 2rem !important;
-
-  > div {
-    display: inline-block;
-    width: 100%;
+.ldst {
+  &__main,
+  &__side {
+    float: none !important;
+    width: auto !important;
   }
 
-  .mb10 {
-    display: none !important;
+  &__main {
+    margin: 2rem 0 3rem !important;
+
+    .blog {
+      &__area,
+      &__area--simple {
+        font-family: -apple-system, BlinkMacSystemFont, "Yu Gothic Medium",
+          YuGothic, sans-serif;
+        font-feature-settings: "palt";
+        text-align: justify;
+        letter-spacing: 0.08rem;
+        line-height: 1.8;
+
+        .txt_selfintroduction {
+          font-size: 15px;
+        }
+      }
+    }
+
+    /* 記事内画像 */
+    .custom_img {
+      display: block;
+      overflow: hidden;
+
+      img {
+        margin: 2rem auto;
+      }
+
+      /* サムネイル枠 & 外部リンクアイコン */
+      .thumb_hover,
+      .ic_external {
+        display: none !important;
+      }
+    }
+
+    /* コメント */
+    .blog__comment {
+      &_box,
+      &_box__wrapper,
+      &_box__header {
+        width: 100% !important;
+        max-width: 960px;
+      }
+    }
+
+    /* 独自ブロックボタン */
+    #custom_blocklist {
+      margin-bottom: var(--margin-bottom);
+      padding: 0 1rem;
+
+      span {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
-}
 
-.ic_external {
-  display: none !important;
-}
+  &__side {
+    /* サイドバーをカラム表示化 */
+    column-width: 300px;
+    column-gap: 15px;
+    margin: 3rem 0 2rem !important;
 
-/* 記事内
-  ------------------------------
-   */
+    > div {
+      display: inline-block;
+      width: 100%;
+    }
 
-.ldst__main {
-  .blog__area,
-  .blog__area--simple {
-    font-size: 14px;
-    text-align: justify;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-      "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, Meiryo,
-      "M+ 1p", sans-serif;
-    font-feature-settings: "palt";
-    letter-spacing: 0.08rem;
-    line-height: 1.8;
-  }
+    .mb10 {
+      display: none !important;
+    }
 
-  .txt_selfintroduction {
-    font-size: inherit;
-  }
-}
-
-/* 記事内画像
-  ------------------------------
-   */
-
-.custom_img {
-  display: table-cell;
-  overflow: hidden;
-
-  img {
-    margin: 2rem auto !important;
-    width: 100%;
-    height: auto;
-  }
-}
-
-.thumb_hover {
-  background: none !important;
-}
-
-/* サイドバー
-  ------------------------------
-   */
-
-.ldst__side__box {
-  padding: 0 !important;
-}
-
-/* コメント欄
-  ------------------------------
-   */
-
-#commentbox,
-#commentbox_in,
-#commentbox_trigger {
-  width: 100% !important;
-  max-width: 960px;
-}
-
-/* ブロックボタン
-  ------------------------------
-   */
-
-#custom_blocklist {
-  margin-bottom: var(--margin-bottom);
-  padding: 0 1rem;
-
-  span {
-    cursor: pointer;
-
-    &:hover {
-      text-decoration: underline;
+    &__side__box {
+      padding: 0 !important;
     }
   }
 }
