@@ -2,6 +2,7 @@ $color--red: #77202f;
 $color--blue: #0f4c81;
 $color--gray: #7e7d88;
 $font-family: Verdana, Geneva, Tahoma, sans-serif;
+$width--article: 220px;
 
 // 大枠の余白
 #breadcrumb,
@@ -10,6 +11,18 @@ $font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .ldst__single_column {
+  // 画像調整
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  // 箱の枠調整
+  div {
+    box-sizing: border-box;
+    border-radius: 0 !important;
+  }
+
   /* #region 見出し */
   h2 {
     font-size: 3rem !important;
@@ -68,18 +81,6 @@ $font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   /* #endregion 見出し */
 
-  // 画像調整
-  img {
-    object-fit: cover;
-    width: 100%;
-  }
-
-  // 箱の枠調整
-  div {
-    box-sizing: border-box;
-    border-radius: 0 !important;
-  }
-
   /* ページャー */
   .entry__blog_block__pager--select--block {
     width: 100% !important;
@@ -89,14 +90,8 @@ $font-family: Verdana, Geneva, Tahoma, sans-serif;
   .entry__block__wrapper {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: auto !important;
-
-    &::after {
-      content: "";
-      display: block;
-      width: 320px;
-    }
 
     .entry__blog_block,
     .entry__blog_block__link {
@@ -108,26 +103,35 @@ $font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
     .entry__blog_block {
-      flex-basis: 300px;
+      flex-basis: $width--article;
       border: 1px solid #7e7d88;
       display: flex;
       flex-flow: column nowrap;
       cursor: pointer;
 
       h5 {
-        padding: 1.5rem 1rem 3rem;
-        font-size: 1.4rem;
-        line-height: 1.2;
+        padding: 1.2rem 0.8rem 2.2rem;
+        font-size: 1.3rem;
+        line-height: 1.4;
       }
 
       a {
         color: inherit !important;
       }
 
+      &:hover .eyecatch img {
+        transform: rotate(10deg) scale(1.4);
+        transition: 0.6s ease-in-out;
+      }
       .eyecatch {
         position: relative;
         color: white;
         overflow: hidden;
+
+        img {
+          transform: rotate(0) scale(1);
+          transition: 0.5s ease-in-out;
+        }
       }
 
       .world {
@@ -147,24 +151,14 @@ $font-family: Verdana, Geneva, Tahoma, sans-serif;
         width: 100%;
         padding: 0 1rem;
         opacity: 0.75;
-      }
 
-      span {
-        padding: 0 0.2rem;
-      }
+        span {
+          padding: 0 0.2rem;
+        }
 
-      .time {
-        margin-right: auto;
-      }
-
-      &:hover .eyecatch img {
-        transform: rotate(10deg) scale(1.4);
-        transition: 0.6s ease-in-out;
-      }
-
-      .eyecatch img {
-        transform: rotate(0) scale(1);
-        transition: 0.5s ease-in-out;
+        .time {
+          margin-right: auto;
+        }
       }
     }
   }
