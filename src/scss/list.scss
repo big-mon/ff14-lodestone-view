@@ -1,205 +1,180 @@
-:root {
-  --red: #77202f;
-  --blue: #0f4c81;
-  --gray: #7e7d88;
-  --border: 1px solid var(--gray);
-  --margin-bottom: 2rem;
-  --h-font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+$color--red: #77202f;
+$color--blue: #0f4c81;
+$color--gray: #7e7d88;
+$font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-/* 全体デザイン
-  ------------------------------
-   */
-
+// 大枠の余白
 #breadcrumb,
-.ldst__contents .ldst__window {
-  margin-bottom: var(--margin-bottom) !important;
+.ldst__window {
+  margin-bottom: 2rem !important;
 }
 
-.ldst__single_column h2 {
-  font-size: 3rem !important;
-  text-transform: uppercase;
-  font-family: var(--h-font-family);
-  line-height: 1;
-}
-
-.ldst__contents {
+.ldst__single_column {
+  /* #region 見出し */
+  h2 {
+    font-size: 3rem !important;
+    text-transform: uppercase;
+    font-family: $font-family;
+    line-height: 1;
+  }
   .heading--lg,
   .ldst__window {
     background: transparent !important;
     box-shadow: none !important;
   }
-}
 
-.entry__pickup {
-  .entry__blog_block,
-  .entry__blog_block__link {
-    background: transparent !important;
-    box-shadow: none !important;
+  /* 注目記事の見出し */
+  .heading--pickup {
+    border-bottom: 1px solid $color--red !important;
+    margin-bottom: 1rem !important;
+    padding-bottom: 1rem !important;
+    color: $color--red !important;
+
+    p {
+      color: $color--red !important;
+    }
   }
+
+  /* 注目記事のスライダー */
+  #custom-slider {
+    .entry {
+      &__blog_block {
+        opacity: 1 !important;
+      }
+
+      &__blog_block__box {
+        height: 48px;
+      }
+    }
+  }
+
+  /* 最新の日記の見出し */
+  .heading--lg:not(.heading--pickup) {
+    color: $color--blue !important;
+    border-bottom: 1px solid $color--blue !important;
+    margin-bottom: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /* 最新の日記の検索 */
+  .heading__icon[data-key="blog_relation_search"] {
+    border-bottom: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    i.icon-btn__search_28 {
+      bottom: 2.5rem !important;
+    }
+  }
+  /* #endregion 見出し */
+
+  // 画像調整
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  // 箱の枠調整
+  div {
+    box-sizing: border-box;
+    border-radius: 0 !important;
+  }
+
+  /* ページャー */
+  .entry__blog_block__pager--select--block {
+    width: 100% !important;
+  }
+
+  /* #region 記事一覧 */
+  .entry__block__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    height: auto !important;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 320px;
+    }
+
+    .entry__blog_block,
+    .entry__blog_block__link {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      opacity: 1 !important;
+      box-sizing: border-box;
+    }
+
+    .entry__blog_block {
+      flex-basis: 300px;
+      border: 1px solid #7e7d88;
+      display: flex;
+      flex-flow: column nowrap;
+      cursor: pointer;
+
+      h5 {
+        padding: 1.5rem 1rem 3rem;
+        font-size: 1.4rem;
+        line-height: 1.2;
+      }
+
+      a {
+        color: inherit !important;
+      }
+
+      .eyecatch {
+        position: relative;
+        color: white;
+        overflow: hidden;
+      }
+
+      .world {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.2rem 0.6rem;
+        font-family: $font-family;
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      .info {
+        position: absolute;
+        left: 0;
+        bottom: 0.2rem;
+        display: flex;
+        width: 100%;
+        padding: 0 1rem;
+        opacity: 0.75;
+      }
+
+      span {
+        padding: 0 0.2rem;
+      }
+
+      .time {
+        margin-right: auto;
+      }
+
+      &:hover .eyecatch img {
+        transform: rotate(10deg) scale(1.4);
+        transition: 0.6s ease-in-out;
+      }
+
+      .eyecatch img {
+        transform: rotate(0) scale(1);
+        transition: 0.5s ease-in-out;
+      }
+    }
+  }
+  /* #endregion 記事一覧 */
 }
 
-.ldst__single_column img,
-.ldst__main img {
-  object-fit: cover;
-  width: 100%;
-}
-
-.ldst__contents div {
-  box-sizing: border-box;
-  border-radius: 0 !important;
-}
-
-/* 削除 */
-
+/* 不要要素の削除 */
 h1,
 .entry__pickup__text,
 .entry__blog_block__pager--change_list,
 .ldst__contents .heading__icon h3 {
   display: none;
 }
-
-/* 注目の日記
-  ------------------------------
-   */
-
-.heading--pickup {
-  border-bottom: 1px solid var(--red) !important;
-  margin-bottom: 1rem !important;
-  padding-bottom: 1rem !important;
-  color: var(--red) !important;
-
-  p {
-    color: var(--red) !important;
-  }
-}
-
-#custom-slider {
-  .entry__blog_block {
-    opacity: 1 !important;
-  }
-
-  .entry__blog_block__box {
-    height: 48px;
-  }
-}
-
-/* 最新の日記 - ヘッダ及び検索
-  ------------------------------
-   */
-
-h2.heading--lg {
-  color: var(--blue) !important;
-  border-bottom: 1px solid var(--blue) !important;
-  margin-bottom: 1rem !important;
-  padding-bottom: 1rem !important;
-}
-
-.entry__blog_block__pager--select--block {
-  width: 100% !important;
-}
-
-.heading__icon[data-key="blog_relation_search"] {
-  border-bottom: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-i.icon-btn__search_28 {
-  bottom: 2.5rem !important;
-}
-
-/* 最新の日記 - 記事カード(全体レイアウト)
-  ------------------------------
-   */
-
-.entry__block__wrapper {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  height: auto !important;
-
-  &::after {
-    content: "";
-    display: block;
-    width: 320px;
-  }
-
-  .entry__blog_block,
-  .entry__blog_block__link {
-    background-color: transparent !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    opacity: 1 !important;
-    box-sizing: border-box;
-  }
-
-  .entry__blog_block {
-    flex-basis: 300px;
-    border: var(--border);
-    display: flex;
-    flex-flow: column nowrap;
-    cursor: pointer;
-
-    h5 {
-      padding: 1.5rem 1rem 3rem;
-      font-size: 1.4rem;
-      line-height: 1.2;
-    }
-
-    a {
-      color: inherit !important;
-    }
-
-    .eyecatch {
-      position: relative;
-      color: white;
-      overflow: hidden;
-    }
-
-    .world {
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 0.2rem 0.6rem;
-      font-family: var(--h-font-family);
-      background: rgba(0, 0, 0, 0.4);
-    }
-
-    .info {
-      position: absolute;
-      left: 0;
-      bottom: 0.2rem;
-      display: flex;
-      width: 100%;
-      padding: 0 1rem;
-      opacity: 0.75;
-    }
-
-    span {
-      padding: 0 0.2rem;
-    }
-
-    .time {
-      margin-right: auto;
-    }
-
-    &:hover .eyecatch img {
-      transform: rotate(10deg) scale(1.4);
-      transition: 0.6s ease-in-out;
-    }
-
-    .eyecatch img {
-      transform: rotate(0) scale(1);
-      transition: 0.5s ease-in-out;
-    }
-  }
-}
-
-/* 最新の日記 - 記事カード(個別レイアウト)
-  ------------------------------
-   */
-
-/* 最新の日記 - 記事カード(エフェクト)
-  ------------------------------
-   */
