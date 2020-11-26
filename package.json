@@ -10,7 +10,8 @@
   },
   "author": "BIG-MON <> (https://github.com/big-mon)",
   "scripts": {
-    "lint": "eslint . --ignore-path .gitignore --ignore-pattern lib/ commitlint.config.js"
+    "lint": "eslint . --ignore-path .gitignore --ignore-pattern lib/ commitlint.config.js",
+    "scss": "node-sass src/scss/ --output src/css/ --output-style compressed"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -19,7 +20,8 @@
     "eslint": "^7.13.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jquery": "^1.5.1",
-    "husky": "^4.3.0"
+    "husky": "^4.3.0",
+    "node-sass": "^5.0.0"
   },
   "eslintConfig": {
     "plugins": [
