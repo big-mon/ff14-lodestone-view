@@ -1,6 +1,6 @@
 // ページ読み込み後の実行処理を制御
 $(document).ready(function() {
-  var url = location.href;
+  let url = location.href;
 
   // 個別ページの場合
   if (url.indexOf("lodestone/character") != -1) {
@@ -34,10 +34,10 @@ $(document).ready(function() {
 
 // ブロック追加ボタン押下
 $(document).on("click", "#custom_blocklist span", function() {
-  var msg =
-    "このユーザーの日記をブロックしますか？\nブロックを解除する場合は拡張機能の設定画面から操作してください" +
-    "\n\n" +
-    "Block this user?\nTo unblock, operate from the extension settings.";
+  let msg =
+    "このユーザーの日記をブロックしますか？\nブロックを解除する場合は拡張機能の設定画面から操作してください"
+    + "\n\n"
+    + "Block this user?\nTo unblock, operate from the extension settings.";
 
   // 確認メッセージ
   if (confirm(msg)) {

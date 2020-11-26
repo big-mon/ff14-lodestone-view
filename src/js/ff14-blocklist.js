@@ -1,4 +1,4 @@
-var BLOCK_FUNCTION = {
+let BLOCK_FUNCTION = {
   // ブロックリスト
   blockUserList: [],
 
@@ -19,19 +19,17 @@ var BLOCK_FUNCTION = {
   // 個別ページ用 - ブロックリスト入りボタンを追加
   insertButton: function() {
     // ブロック済みかを判定
-    var isAlreadyBlocked = false;
+    let isAlreadyBlocked = false;
     $(BLOCK_FUNCTION.blockUserList).each(function(index, item) {
       if (item.id === BLOCK_FUNCTION.chara_id) isAlreadyBlocked = true;
     });
 
     // キャラクター情報取得成功かつ未ブロックの場合、ボタンを表示
     if (isAlreadyBlocked) {
-      var html =
-        '<div id="custom_blocklist">⛔ This user is listed in your blocklist.</div>';
+      let html = '<div id="custom_blocklist">⛔ This user is listed in your blocklist.</div>';
       $(".btn__nav").before(html);
     } else if ($(".ldst__window .frame__chara__box").length) {
-      var html =
-        '<div id="custom_blocklist"><span>⛔ Add Blocklist</span></div>';
+      let html = '<div id="custom_blocklist"><span>⛔ Add Blocklist</span></div>';
       $(".btn__nav").before(html);
     }
   },
@@ -42,9 +40,7 @@ var BLOCK_FUNCTION = {
       BLOCK_FUNCTION.blockUserList.filter(function(itm, idx) {
         if (itm.id == $(item).attr("data-character")) {
           console.log("Blocked:" + itm.name + "(" + itm.id + ")");
-          $(item)
-            .closest(".entry__blog_block")
-            .attr("style", "display: none");
+          $(item).closest(".entry__blog_block").attr("style", "display: none");
         }
       });
     });
