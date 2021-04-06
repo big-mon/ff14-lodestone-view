@@ -14,13 +14,13 @@
     "scss": "node-sass src/scss/ --output src/css/ --output-style compressed"
   },
   "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
-    "@commitlint/travis-cli": "^11.0.0",
-    "eslint": "^7.13.0",
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@commitlint/travis-cli": "^12.1.1",
+    "eslint": "^7.23.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jquery": "^1.5.1",
-    "husky": "^4.3.0",
+    "husky": "^6.0.0",
     "node-sass": "^5.0.0"
   },
   "eslintConfig": {
