@@ -14,9 +14,9 @@
     "scss": "node-sass src/scss/ --output src/css/ --output-style compressed"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
-    "@commitlint/travis-cli": "^12.1.4",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@commitlint/travis-cli": "^13.1.0",
     "eslint": "^7.30.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jquery": "^1.5.1",
