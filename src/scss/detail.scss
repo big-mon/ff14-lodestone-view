@@ -67,20 +67,19 @@
 
   &__side {
     /* サイドバーをカラム表示化 */
-    column-width: 300px;
-    column-gap: 15px;
-    margin: 3rem 0 2rem !important;
+    column-count: 3;
 
     > div {
-      display: inline-block;
-      width: 100%;
+      page-break-inside: avoid;
+      break-inside: avoid;
     }
 
+    /** バナー表示を除外 */
     .mb10 {
       display: none !important;
     }
 
-    &__side__box {
+    &__box {
       padding: 0 !important;
     }
   }
