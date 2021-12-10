@@ -1,8 +1,8 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "FF14 The Lodestone Improve: Astrild",
   "short_name": "Astrild",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "__MSG_appDesc__",
   "default_locale": "ja",
   "icons": {
@@ -32,7 +32,7 @@
       ]
     }
   ],
-  "browser_action": {
+  "action": {
     "default_icon": "images/icon48.png",
     "default_title": "",
     "default_popup": "popup/popup.html"
