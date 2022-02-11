@@ -13,7 +13,7 @@
     "scss": "node-sass src/scss/ --output src/css/ --output-style compressed"
   },
   "devDependencies": {
-    "node-sass": "^6.0.1"
+    "node-sass": "^7.0.0"
   },
   "eslintConfig": {
     "plugins": [
