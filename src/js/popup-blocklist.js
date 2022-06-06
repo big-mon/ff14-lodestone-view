@@ -101,6 +101,6 @@ $(document).on("click", "#save", function () {
 });
 
 // キャンセルボタン押下
-$(document).on("click", "#cansel", function () {
+$(document).on("click", "#cancel", function () {
   window.close();
 });
