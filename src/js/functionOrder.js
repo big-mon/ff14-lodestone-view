@@ -1,5 +1,5 @@
 // ページ読み込み後の実行処理を制御
-$(document).ready(function() {
+$(document).ready(function () {
   let url = location.href;
 
   // 個別ページの場合
@@ -7,7 +7,7 @@ $(document).ready(function() {
     DETAIL_FUNCTION.imgConvert();
 
     // ブロックリストを取得
-    chrome.storage.sync.get(["blocklist"], function(result) {
+    chrome.storage.sync.get(["blocklist"], function (result) {
       // 未定義の場合はからの配列を代入
       BLOCK_FUNCTION.blockUserList =
         result.blocklist != null ? result.blocklist : [];
@@ -24,7 +24,7 @@ $(document).ready(function() {
     LIST_FUNCTION.editRecent();
 
     // ブロックリストを取得
-    chrome.storage.sync.get(["blocklist"], function(result) {
+    chrome.storage.sync.get(["blocklist"], function (result) {
       BLOCK_FUNCTION.blockUserList = result.blocklist;
 
       BLOCK_FUNCTION.hiddenBlock();
@@ -33,11 +33,11 @@ $(document).ready(function() {
 });
 
 // ブロック追加ボタン押下
-$(document).on("click", "#custom_blocklist span", function() {
+$(document).on("click", "#custom_blocklist span", function () {
   let msg =
-    "このユーザーの日記をブロックしますか？\nブロックを解除する場合は拡張機能の設定画面から操作してください"
-    + "\n\n"
-    + "Block this user?\nTo unblock, operate from the extension settings.";
+    "このユーザーの日記をブロックしますか？\nブロックを解除する場合は拡張機能の設定画面から操作してください" +
+    "\n\n" +
+    "Block this user?\nTo unblock, operate from the extension settings.";
 
   // 確認メッセージ
   if (confirm(msg)) {
@@ -45,12 +45,8 @@ $(document).on("click", "#custom_blocklist span", function() {
     var item = $(".ldst__window .frame__chara__box");
     BLOCK_FUNCTION.blockUserList.push({
       id: BLOCK_FUNCTION.chara_id,
-      name: $(item)
-        .find(".frame__chara__name")
-        .text(),
-      world: $(item)
-        .find(".frame__chara__world")
-        .text()
+      name: $(item).find(".frame__chara__name").text(),
+      world: $(item).find(".frame__chara__world").text(),
     });
 
     // 連想配列から重複を削除
@@ -59,7 +55,7 @@ $(document).on("click", "#custom_blocklist span", function() {
     // 更新
     chrome.storage.sync.set(
       { blocklist: BLOCK_FUNCTION.blockUserList },
-      function() {
+      function () {
         console.log("saved");
       }
     );

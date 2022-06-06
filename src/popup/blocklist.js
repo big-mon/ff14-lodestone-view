@@ -3,20 +3,20 @@ var BLOCK_FUNCTION = {
   list: [],
 
   // ブロックリストを更新(対象を全件投入)
-  updateList: function(list) {
-    chrome.storage.sync.set({ blocklist: list }, function() {
+  updateList: function (list) {
+    chrome.storage.sync.set({ blocklist: list }, function () {
       console.log("saved");
     });
   },
 
   // ブロックリストを取得
-  getList: function() {
-    chrome.storage.sync.get(["blocklist"], function(result) {
+  getList: function () {
+    chrome.storage.sync.get(["blocklist"], function (result) {
       var tmp = result.blocklist != null ? result.blocklist : [];
 
       BLOCK_FUNCTION.list = tmp
         // chromeから取得したリストをソートして格納(world, name)
-        .sort(function(a, b) {
+        .sort(function (a, b) {
           a1 = a.world.toString().toLowerCase();
           b1 = b.world.toString().toLowerCase();
           if (a1 < b1) return -1;
@@ -28,9 +28,9 @@ var BLOCK_FUNCTION = {
           }
         })
         // 重複を除外(id)
-        .filter(function(v1, i1, a1) {
+        .filter(function (v1, i1, a1) {
           return (
-            a1.findIndex(function(v2) {
+            a1.findIndex(function (v2) {
               return v1.id === v2.id;
             }) === i1
           );
@@ -42,10 +42,10 @@ var BLOCK_FUNCTION = {
   },
 
   // ブロックリストを画面に反映
-  redrawList: function() {
+  redrawList: function () {
     // ブロックリストのHTMLを生成
     var html = [];
-    $(BLOCK_FUNCTION.list).each(function(index, item) {
+    $(BLOCK_FUNCTION.list).each(function (index, item) {
       var tmp =
         '<tr data-id="' +
         item.id +
@@ -68,33 +68,31 @@ var BLOCK_FUNCTION = {
   },
 
   // 設定画面からブロックリストを取得
-  readyUpdate: function() {
+  readyUpdate: function () {
     var tmp = [];
-    $("#blocklist-list tbody tr").each(function(index, item) {
+    $("#blocklist-list tbody tr").each(function (index, item) {
       tmp.push({
         id: $(item).data("id"),
         name: $(item).data("name"),
-        world: $(item).data("world")
+        world: $(item).data("world"),
       });
     });
     BLOCK_FUNCTION.list = tmp;
-  }
+  },
 };
 
 // ページ読み込み完了時に実行
-window.onload = function() {
+window.onload = function () {
   BLOCK_FUNCTION.getList();
 };
 
 // 解除ボタン押下
-$(document).on("click", ".remove", function() {
-  $(this)
-    .closest("tr")
-    .remove();
+$(document).on("click", ".remove", function () {
+  $(this).closest("tr").remove();
 });
 
 // 保存ボタン押下
-$(document).on("click", "#save", function() {
+$(document).on("click", "#save", function () {
   // 残るブロックリストを取得
   BLOCK_FUNCTION.readyUpdate();
 
@@ -103,6 +101,6 @@ $(document).on("click", "#save", function() {
 });
 
 // キャンセルボタン押下
-$(document).on("click", "#cansel", function() {
+$(document).on("click", "#cansel", function () {
   window.close();
 });
