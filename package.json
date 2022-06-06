@@ -10,7 +10,8 @@
   },
   "author": "BIG-MON <> (https://github.com/big-mon)",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "lint": "eslint ./src/js/*"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
@@ -18,6 +19,8 @@
     "babel-loader": "^8.2.5",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
+    "eslint": "^8.17.0",
+    "eslint-plugin-jquery": "^1.5.1",
     "jquery": "^3.6.0",
     "node-sass": "^7.0.0",
     "owl.carousel": "^2.3.4",
@@ -34,6 +37,9 @@
       "browser": false,
       "jquery": true,
       "es6": true
+    },
+    "parserOptions": {
+      "sourceType": "module"
     }
   }
 }

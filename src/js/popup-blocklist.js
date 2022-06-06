@@ -1,4 +1,4 @@
-var BLOCK_FUNCTION = {
+let BLOCK_FUNCTION = {
   // ブロックリスト
   list: [],
 
@@ -12,7 +12,7 @@ var BLOCK_FUNCTION = {
   // ブロックリストを取得
   getList: function () {
     chrome.storage.sync.get(["blocklist"], function (result) {
-      var tmp = result.blocklist != null ? result.blocklist : [];
+      let tmp = result.blocklist != null ? result.blocklist : [];
 
       BLOCK_FUNCTION.list = tmp
         // chromeから取得したリストをソートして格納(world, name)
@@ -44,9 +44,9 @@ var BLOCK_FUNCTION = {
   // ブロックリストを画面に反映
   redrawList: function () {
     // ブロックリストのHTMLを生成
-    var html = [];
+    let html = [];
     $(BLOCK_FUNCTION.list).each(function (index, item) {
-      var tmp =
+      let tmp =
         '<tr data-id="' +
         item.id +
         '" data-name="' +
@@ -69,7 +69,7 @@ var BLOCK_FUNCTION = {
 
   // 設定画面からブロックリストを取得
   readyUpdate: function () {
-    var tmp = [];
+    let tmp = [];
     $("#blocklist-list tbody tr").each(function (index, item) {
       tmp.push({
         id: $(item).data("id"),
