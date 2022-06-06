@@ -1,3 +1,5 @@
+import "../scss/popup.scss";
+
 let BLOCK_FUNCTION = {
   // ブロックリスト
   list: [],
