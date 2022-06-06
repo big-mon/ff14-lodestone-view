@@ -24,7 +24,5 @@ yarn
 ### Step 2: Deploy
 
 ```sh
-yarn run scss
-
-git archive HEAD:src --output=../ff14-lodestone-view.zip
+yarn build
 ```
