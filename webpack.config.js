@@ -30,13 +30,20 @@ module.exports = {
       },
       {
         // CSSのコンパイル定義
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         use: [
           "style-loader",
           {
             loader: "css-loader",
-            options: { url: false },
+            options: {
+              url: false,
+              // 0 => no loaders (default);
+              // 1 => postcss-loader;
+              // 2 => postcss-loader, sass-loader
+              importLoaders: 2,
+            },
           },
+          { loader: "sass-loader" },
         ],
       },
     ],

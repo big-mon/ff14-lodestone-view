@@ -1,3 +1,5 @@
+import "../scss/detail.scss";
+
 /** 疑似名前空間-detail */
 let DETAIL_FUNCTION = {
   // 画像タグを調整

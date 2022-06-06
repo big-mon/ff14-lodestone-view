@@ -16,7 +16,7 @@
         "https://*.finalfantasyxiv.com/lodestone/character/*/blog*",
         "https://*.finalfantasyxiv.com/lodestone/blog*"
       ],
-      "css": ["css/detail.css", "css/list.css"],
+      "css": [],
       "js": ["js/contentScripts.js"],
       "run_at": "document_end"
     }
