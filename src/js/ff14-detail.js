@@ -2,7 +2,7 @@ import "../scss/detail.scss";
 
 /** 疑似名前空間-detail */
 let DETAIL_FUNCTION = {
-  // 画像タグを調整
+  /** 画像タグを調整 */
   imgConvert: function () {
     // 画像要素のリストを加工(リッチ版)
     DETAIL_FUNCTION.hrefConvert($(".blog__area .img_box"));
@@ -14,7 +14,7 @@ let DETAIL_FUNCTION = {
     });
   },
 
-  // hrefを入れ替える関数
+  /** hrefを入れ替える関数 */
   hrefConvert: function (list) {
     $(list).each(function (index, item) {
       // 規定タグを変更

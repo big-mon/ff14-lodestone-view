@@ -12,7 +12,7 @@ let LIST_FUNCTION = {
     $("h2.heading--lg").text("Recent");
   },
 
-  // 注目の日記部分を更新
+  /** 注目の日記部分を更新 */
   editPopular: function () {
     // 記事一覧を収集
     let array = [];
@@ -37,7 +37,7 @@ let LIST_FUNCTION = {
     });
   },
 
-  // 最新の日記部分の改変
+  /** 最新の日記部分の改変 */
   editRecent: function () {
     // タグや属性を整理しつつ記事情報を収集
     $(".entry__block__wrapper")

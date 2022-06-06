@@ -5,7 +5,7 @@ let BLOCK_FUNCTION = {
   // 現在表示している日記のキャラクターID
   chara_id: "",
 
-  // 連想配列から重複を削除
+  /** 連想配列から重複を削除 */
   cleaningList: function () {
     BLOCK_FUNCTION.blockUserList.filter(function (v1, i1, a1) {
       return (
@@ -16,7 +16,7 @@ let BLOCK_FUNCTION = {
     });
   },
 
-  // 個別ページ用 - ブロックリスト入りボタンを追加
+  /** 個別ページ用 - ブロックリスト入りボタンを追加 */
   insertButton: function () {
     // ブロック済みかを判定
     let isAlreadyBlocked = false;
@@ -36,7 +36,7 @@ let BLOCK_FUNCTION = {
     }
   },
 
-  // 一覧ページ用 - ブロックユーザーの記事を非表示
+  /** 一覧ページ用 - ブロックユーザーの記事を非表示 */
   hiddenBlock: function () {
     $(".entry__block__wrapper a").each(function (index, item) {
       BLOCK_FUNCTION.blockUserList.filter(function (itm, idx) {
