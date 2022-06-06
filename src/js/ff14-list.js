@@ -5,7 +5,7 @@ import "owl.carousel";
 
 /** 疑似名前空間-list */
 let LIST_FUNCTION = {
-  // タイトルバーの修正
+  /** タイトルバーの修正 */
   editTitle: function () {
     // h2内容の変更
     $(".heading--pickup h2").text("Popular");
