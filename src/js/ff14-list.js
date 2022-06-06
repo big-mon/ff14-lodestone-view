@@ -13,7 +13,10 @@ export const editTitle = () => {
 /** 注目の日記部分を更新 */
 export const editPopular = () => {
   // 記事一覧を収集
-  let array = document.querySelectorAll(".entry__pickup .entry__blog_block");
+  let array = Array.from(
+    document.querySelectorAll(".entry__pickup .entry__blog_block")
+  ).slice(0, 20);
+  console.log(array);
   document.querySelector(".entry__pickup").remove();
 
   // 新規スライダーを作成
@@ -24,7 +27,11 @@ export const editPopular = () => {
   // 新規スライダーを挿入
   const heading = document.querySelector(".heading--pickup");
   heading.parentNode.insertBefore(slider, heading.nextElementSibling);
-  document.querySelector("#custom-slider").appendChild(...array);
+
+  // 記事を挿入
+  array.forEach((article) =>
+    document.querySelector("#custom-slider").appendChild(article)
+  );
 
   // スライダーを稼働
   $(".owl-carousel").owlCarousel({
