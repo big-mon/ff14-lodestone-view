@@ -4,7 +4,7 @@ import BLOCK_FUNCTION from "./ff14-blocklist";
 
 /** ページ毎の処理を設定 */
 const setPageFunction = function () {
-  let url = location.href;
+  const url = location.href;
 
   // 個別ページの場合
   if (url.indexOf("lodestone/character") != -1) {
@@ -43,32 +43,32 @@ const setPageFunction = function () {
 
 /** ブロック追加ボタン押下処理 */
 const blockAction = function () {
-  let msg =
+  const msg =
     "このユーザーの日記をブロックしますか？\nブロックを解除する場合は拡張機能の設定画面から操作してください" +
     "\n\n" +
     "Block this user?\nTo unblock, operate from the extension settings.";
 
   // 確認メッセージ
-  if (confirm(msg)) {
-    // キャラクター情報を取得
-    var item = $(".ldst__window .frame__chara__box");
-    BLOCK_FUNCTION.blockUserList.push({
-      id: BLOCK_FUNCTION.chara_id,
-      name: $(item).find(".frame__chara__name").text(),
-      world: $(item).find(".frame__chara__world").text(),
-    });
+  if (!confirm(msg)) return;
 
-    // 連想配列から重複を削除
-    BLOCK_FUNCTION.cleaningList();
+  // キャラクター情報を取得
+  const item = $(".ldst__window .frame__chara__box");
+  BLOCK_FUNCTION.blockUserList.push({
+    id: BLOCK_FUNCTION.chara_id,
+    name: $(item).find(".frame__chara__name").text(),
+    world: $(item).find(".frame__chara__world").text(),
+  });
 
-    // 更新
-    chrome.storage.sync.set(
-      { blocklist: BLOCK_FUNCTION.blockUserList },
-      function () {
-        console.log("saved");
-      }
-    );
-  }
+  // 連想配列から重複を削除
+  BLOCK_FUNCTION.cleaningList();
+
+  // 更新
+  chrome.storage.sync.set(
+    { blocklist: BLOCK_FUNCTION.blockUserList },
+    function () {
+      console.log("saved");
+    }
+  );
 };
 
 // ページ読み込み後の実行処理を制御
