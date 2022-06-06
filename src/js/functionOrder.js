@@ -1,5 +1,5 @@
-// ページ読み込み後の実行処理を制御
-$(document).ready(function () {
+/** ページ毎の処理を設定 */
+const setPageFunction = function () {
   let url = location.href;
 
   // 個別ページの場合
@@ -15,6 +15,11 @@ $(document).ready(function () {
       // ブロックボタンの追加判定
       BLOCK_FUNCTION.chara_id = url.match(/^.+character\/([0-9]+)\//)[1];
       BLOCK_FUNCTION.insertButton();
+
+      // ブロック追加ボタンのクリックイベントを定義
+      document
+        .querySelector("#custom_blocklist span")
+        .addEventListener("click", blockAction, false);
     });
   }
   // 一覧ページの場合
@@ -30,10 +35,10 @@ $(document).ready(function () {
       BLOCK_FUNCTION.hiddenBlock();
     });
   }
-});
+};
 
-// ブロック追加ボタン押下
-$(document).on("click", "#custom_blocklist span", function () {
+/** ブロック追加ボタン押下処理 */
+const blockAction = function () {
   let msg =
     "このユーザーの日記をブロックしますか？\nブロックを解除する場合は拡張機能の設定画面から操作してください" +
     "\n\n" +
@@ -60,4 +65,7 @@ $(document).on("click", "#custom_blocklist span", function () {
       }
     );
   }
-});
+};
+
+// ページ読み込み後の実行処理を制御
+window.addEventListener("load", setPageFunction, false);

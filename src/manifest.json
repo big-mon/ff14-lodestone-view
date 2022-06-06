@@ -29,7 +29,8 @@
         "js/ff14-detail.js",
         "js/ff14-list.js",
         "js/ff14-blocklist.js"
-      ]
+      ],
+      "run_at": "document_end"
     }
   ],
   "action": {
