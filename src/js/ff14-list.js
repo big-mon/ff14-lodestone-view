@@ -77,7 +77,7 @@ let LIST_FUNCTION = {
             (entry.comment !== void 0 ? entry.comment : "0") +
             "</span>",
           like:
-            "<span>💗 " +
+            "<span>❤️ " +
             (entry.like.length !== 0 ? entry.like : "0") +
             "</span>",
           time: '<span class="time"><time>' + entry.date + "</time></span>",
