@@ -7,6 +7,7 @@ module.exports = {
 
   entry: {
     contentScripts: `${__dirname}/src/js/functionOrder.js`,
+    popup: `${__dirname}/src/js/popup-blocklist.js`,
   },
   output: {
     path: `${__dirname}/dist/js`,
