@@ -1,6 +1,6 @@
 {
   "name": "ff14-lodestone-view",
-  "description": "FF14's The Loasetone customize.",
+  "description": "Customize FF14's `The Lodestone`.",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
