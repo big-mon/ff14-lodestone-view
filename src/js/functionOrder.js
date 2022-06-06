@@ -1,6 +1,12 @@
-import DETAIL_FUNCTION from "./ff14-detail";
-import LIST_FUNCTION from "./ff14-list";
-import BLOCK_FUNCTION from "./ff14-blocklist";
+import { imgConvert } from "./ff14-detail";
+import { editTitle, editPopular, editRecent } from "./ff14-list";
+import {
+  blockUserList,
+  chara_id,
+  hiddenBlock,
+  insertButton,
+  cleaningList,
+} from "./ff14-blocklist";
 
 /** ページ毎の処理を設定 */
 const setPageFunction = function () {
@@ -8,17 +14,16 @@ const setPageFunction = function () {
 
   // 個別ページの場合
   if (url.indexOf("lodestone/character") != -1) {
-    DETAIL_FUNCTION.imgConvert();
+    imgConvert();
 
     // ブロックリストを取得
     chrome.storage.sync.get(["blocklist"], function (result) {
       // 未定義の場合はからの配列を代入
-      BLOCK_FUNCTION.blockUserList =
-        result.blocklist != null ? result.blocklist : [];
+      blockUserList = result.blocklist != null ? result.blocklist : [];
 
       // ブロックボタンの追加判定
-      BLOCK_FUNCTION.chara_id = url.match(/^.+character\/([0-9]+)\//)[1];
-      BLOCK_FUNCTION.insertButton();
+      chara_id = url.match(/^.+character\/([0-9]+)\//)[1];
+      insertButton();
 
       // ブロック追加ボタンのクリックイベントを定義
       document
@@ -28,15 +33,15 @@ const setPageFunction = function () {
   }
   // 一覧ページの場合
   else if (url.indexOf("lodestone/blog") != -1) {
-    LIST_FUNCTION.editTitle();
-    LIST_FUNCTION.editPopular();
-    LIST_FUNCTION.editRecent();
+    editTitle();
+    editPopular();
+    editRecent();
 
     // ブロックリストを取得
     chrome.storage.sync.get(["blocklist"], function (result) {
-      BLOCK_FUNCTION.blockUserList = result.blocklist;
+      blockUserList = result.blocklist;
 
-      BLOCK_FUNCTION.hiddenBlock();
+      hiddenBlock();
     });
   }
 };
@@ -53,22 +58,19 @@ const blockAction = function () {
 
   // キャラクター情報を取得
   const item = $(".ldst__window .frame__chara__box");
-  BLOCK_FUNCTION.blockUserList.push({
-    id: BLOCK_FUNCTION.chara_id,
+  blockUserList.push({
+    id: chara_id,
     name: $(item).find(".frame__chara__name").text(),
     world: $(item).find(".frame__chara__world").text(),
   });
 
   // 連想配列から重複を削除
-  BLOCK_FUNCTION.cleaningList();
+  cleaningList();
 
   // 更新
-  chrome.storage.sync.set(
-    { blocklist: BLOCK_FUNCTION.blockUserList },
-    function () {
-      console.log("saved");
-    }
-  );
+  chrome.storage.sync.set({ blocklist: blockUserList }, function () {
+    console.log("saved");
+  });
 };
 
 // ページ読み込み後の実行処理を制御
