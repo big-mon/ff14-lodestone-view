@@ -10,8 +10,7 @@
   },
   "author": "BIG-MON <> (https://github.com/big-mon)",
   "scripts": {
-    "build": "webpack",
-    "scss": "node-sass src/scss/ --output dist/css/ --output-style compressed"
+    "build": "webpack"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
