@@ -1,3 +1,7 @@
+import DETAIL_FUNCTION from "./ff14-detail";
+import LIST_FUNCTION from "./ff14-list";
+import BLOCK_FUNCTION from "./ff14-blocklist";
+
 /** ページ毎の処理を設定 */
 const setPageFunction = function () {
   let url = location.href;

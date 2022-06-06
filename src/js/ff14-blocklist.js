@@ -48,3 +48,5 @@ let BLOCK_FUNCTION = {
     });
   },
 };
+
+export default BLOCK_FUNCTION;

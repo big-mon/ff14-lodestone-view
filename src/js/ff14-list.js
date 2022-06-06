@@ -1,4 +1,8 @@
-// 疑似名前空間-list
+import "owl.carousel/dist/assets/owl.carousel.min.css";
+import "owl.carousel/dist/assets/owl.theme.default.min.css";
+import "owl.carousel";
+
+/** 疑似名前空間-list */
 let LIST_FUNCTION = {
   // タイトルバーの修正
   editTitle: function () {
@@ -102,3 +106,5 @@ let LIST_FUNCTION = {
       .removeAttr("style");
   },
 };
+
+export default LIST_FUNCTION;

@@ -1,4 +1,4 @@
-// 疑似名前空間-detail
+/** 疑似名前空間-detail */
 let DETAIL_FUNCTION = {
   // 画像タグを調整
   imgConvert: function () {
@@ -32,3 +32,5 @@ let DETAIL_FUNCTION = {
     });
   },
 };
+
+export default DETAIL_FUNCTION;

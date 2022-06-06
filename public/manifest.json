@@ -16,20 +16,8 @@
         "https://*.finalfantasyxiv.com/lodestone/character/*/blog*",
         "https://*.finalfantasyxiv.com/lodestone/blog*"
       ],
-      "css": [
-        "lib/owl.carousel.min.css",
-        "lib/owl.theme.default.min.css",
-        "css/detail.css",
-        "css/list.css"
-      ],
-      "js": [
-        "lib/jquery.js",
-        "lib/owl.carousel.min.js",
-        "js/functionOrder.js",
-        "js/ff14-detail.js",
-        "js/ff14-list.js",
-        "js/ff14-blocklist.js"
-      ],
+      "css": ["css/detail.css", "css/list.css"],
+      "js": ["js/contentScripts.js"],
       "run_at": "document_end"
     }
   ],
